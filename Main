@@ -1,0 +1,29 @@
+#The Caesar cipher is a simple encryption technique that was used by Julius Caesar to send secret messages to his allies. 
+#It works by shifting the letters in the plaintext message by a certain number of positions, known as the “shift” or “key”.
+
+
+def ceasar_encrypt(_message_,_key_):
+    _message_.lower()
+    _encrypted_=''
+    _alphabet_='abcdefghijklmnopqrstuvwxyz'
+    _alphabet_*=_key_
+    for i in range(len(_message_)):
+        if _message_[i]==' ':
+            _encrypted_+=' '
+        elif _message_[i] in _alphabet_:
+            _reiterate_=_alphabet_.index(_message_[i])
+            _encrypted_+=_alphabet_[_reiterate_+_key_]
+    return _encrypted_
+
+def ceasar_decrypt(_code_,_key_):
+    _decrypted_=''
+    _alphabet_='abcdefghijklmnopqrstuvwxyz'
+    _alphabet_*=_key_
+    for i in range(len(_code_)):
+        if _code_[i]==' ':
+            _decrypted_+=' '
+        elif _code_[i] in _alphabet_:
+            _reiterate_=_alphabet_.index(_code_[i])
+            _decrypted_+=_alphabet_[_reiterate_-_key_]
+    return _decrypted_
+
